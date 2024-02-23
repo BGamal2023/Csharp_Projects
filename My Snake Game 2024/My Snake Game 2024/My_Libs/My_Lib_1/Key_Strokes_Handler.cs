@@ -1,10 +1,10 @@
 ﻿
-using Grid_Test.My_Libs.My_Lib_1.Globals;
+using My_Snake_Game_2024.My_Libs.My_Lib_1.Globals;
 using System.Windows;
 using System.Windows.Input;
 
 
-namespace Grid_Test.My_Libs.My_Lib_1
+namespace My_Snake_Game_2024.My_Libs.My_Lib_1
 {
     internal class Key_Strokes_Handler
     {

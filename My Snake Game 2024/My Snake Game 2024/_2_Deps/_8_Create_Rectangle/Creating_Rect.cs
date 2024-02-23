@@ -1,5 +1,5 @@
-﻿using Grid_Test.__Globals;
-using Grid_Test._2_Deps._9_List_Of_Snake_Parts_Handler;
+﻿using My_Snake_Game_2024.__Globals;
+using My_Snake_Game_2024._2_Deps._9_List_Of_Snake_Parts_Handler;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
 
-namespace Grid_Test._2_Deps._8_Create_Rectangle
+namespace My_Snake_Game_2024._2_Deps._8_Create_Rectangle
 {
     internal class Creating_Rect
     {

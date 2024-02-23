@@ -1,8 +1,8 @@
-﻿using Grid_Test.__Globals;
-using Grid_Test._2_Deps._8_Create_Rectangle;
-using Grid_Test._2_Deps._9_List_Of_Snake_Parts_Handler;
-using Grid_Test.My_Libs.My_Lib_1;
-using Grid_Test.My_Libs.My_Lib_1.Globals;
+﻿using My_Snake_Game_2024.__Globals;
+using My_Snake_Game_2024._2_Deps._8_Create_Rectangle;
+using My_Snake_Game_2024._2_Deps._9_List_Of_Snake_Parts_Handler;
+using My_Snake_Game_2024.My_Libs.My_Lib_1;
+using My_Snake_Game_2024.My_Libs.My_Lib_1.Globals;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -14,7 +14,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
 
-namespace Grid_Test._2_Deps._1_Snake_Body_Handler
+namespace My_Snake_Game_2024._2_Deps._1_Snake_Body_Handler
 
 {
     class Snake_Body_Handler

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Grid_Test.My_Libs.My_Lib_1.Globals
+namespace My_Snake_Game_2024.My_Libs.My_Lib_1.Globals
 {
     internal class Global_Directions
     {

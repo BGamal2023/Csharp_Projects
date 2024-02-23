@@ -1,0 +1,5 @@
+E:\Programming\12_C#\Csharp_Projects\My Snake Game 2024\My Snake Game 2024\obj\Debug\net8.0-windows\MainWindow.g.cs
+E:\Programming\12_C#\Csharp_Projects\My Snake Game 2024\My Snake Game 2024\obj\Debug\net8.0-windows\_0_Main\MainWindow.g.cs
+E:\Programming\12_C#\Csharp_Projects\My Snake Game 2024\My Snake Game 2024\obj\Debug\net8.0-windows\App.g.cs
+E:\Programming\12_C#\Csharp_Projects\My Snake Game 2024\My Snake Game 2024\obj\Debug\net8.0-windows\My Snake Game 2024_MarkupCompile.cache
+E:\Programming\12_C#\Csharp_Projects\My Snake Game 2024\My Snake Game 2024\obj\Debug\net8.0-windows\My Snake Game 2024_MarkupCompile.lref

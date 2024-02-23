@@ -12,19 +12,20 @@ using System.Windows.Media;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.Reflection.Emit;
-using Grid_Test.__Globals;
-using Grid_Test._2_Deps._1_Snake_Body_Handler;
-using Grid_Test._2_Deps._2_Snake_Moving_Handler;
-using Grid_Test._2_Deps._3_Snake_Food_Handler;
-using Grid_Test._2_Deps._4_Collision_Handler;
-using Grid_Test._2_Deps._7_Player_Score_Handler;
-using Grid_Test.My_Libs.My_Lib_1.Globals;
+using My_Snake_Game_2024.__Globals;
+using My_Snake_Game_2024._2_Deps._1_Snake_Body_Handler;
+using My_Snake_Game_2024._2_Deps._2_Snake_Moving_Handler;
+using My_Snake_Game_2024._2_Deps._3_Snake_Food_Handler;
+using My_Snake_Game_2024._2_Deps._4_Collision_Handler;
+using My_Snake_Game_2024._2_Deps._7_Player_Score_Handler;
+using My_Snake_Game_2024.My_Libs.My_Lib_1.Globals;
 using Label = System.Windows.Controls.Label;
-using Grid_Test._2_Deps._5_Game_Levels_Handler;
-using Grid_Test._2_Deps._A_10_Game_Area_Handler;
+using My_Snake_Game_2024._2_Deps._5_Game_Levels_Handler;
+using My_Snake_Game_2024._2_Deps._A_10_Game_Area_Handler;
+using My_Snake_Game_2024;
 
 
-namespace Grid_Test._1_Managers
+namespace My_Snake_Game_2024._1_Managers
 
 {
     internal class General_Manager

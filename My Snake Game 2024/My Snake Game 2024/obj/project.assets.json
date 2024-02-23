@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Programming\\12_C#\\Csharp_Projects\\My Snake Game 2024\\My Snake Game 2024\\My Snake Game 2024.csproj",
-      "projectName": "My Snake Game 2024",
-      "projectPath": "E:\\Programming\\12_C#\\Csharp_Projects\\My Snake Game 2024\\My Snake Game 2024\\My Snake Game 2024.csproj",
+      "projectUniqueName": "E:\\Programming\\12_C#\\Csharp_Projects\\My Snake Game 2024\\My Snake Game 2024\\My_Snake_Game_2024.csproj",
+      "projectName": "My_Snake_Game_2024",
+      "projectPath": "E:\\Programming\\12_C#\\Csharp_Projects\\My Snake Game 2024\\My Snake Game 2024\\My_Snake_Game_2024.csproj",
       "packagesPath": "C:\\Users\\BG\\.nuget\\packages\\",
       "outputPath": "E:\\Programming\\12_C#\\Csharp_Projects\\My Snake Game 2024\\My Snake Game 2024\\obj\\",
       "projectStyle": "PackageReference",

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Grid_Test._2_Deps._3_Snake_Food_Handler
+namespace My_Snake_Game_2024._2_Deps._3_Snake_Food_Handler
 {
     internal class Snake_Food
     {

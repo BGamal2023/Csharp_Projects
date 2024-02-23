@@ -1,5 +1,5 @@
-﻿using Grid_Test.__Globals;
-using Grid_Test._2_Deps._9_List_Of_Snake_Parts_Handler;
+﻿using My_Snake_Game_2024.__Globals;
+using My_Snake_Game_2024._2_Deps._9_List_Of_Snake_Parts_Handler;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Threading;
 
-namespace Grid_Test._2_Deps._5_Game_Levels_Handler
+namespace My_Snake_Game_2024._2_Deps._5_Game_Levels_Handler
 {
     internal class Game_Level_Handler
     {

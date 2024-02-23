@@ -1,5 +1,5 @@
-﻿using Grid_Test._2_Deps._1_Snake_Body_Handler;
-using Grid_Test._2_Deps._3_Snake_Food_Handler;
+﻿using My_Snake_Game_2024._2_Deps._1_Snake_Body_Handler;
+using My_Snake_Game_2024._2_Deps._3_Snake_Food_Handler;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Shapes;
 
-namespace Grid_Test.__Globals
+namespace My_Snake_Game_2024.__Globals
 {
     internal class Globals
     {
