@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using Grid_Test.My_Libs.My_Lib_1;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,9 +17,19 @@ namespace My_Snake_Game_2024
     /// </summary>
     public partial class MainWindow : Window
     {
+        //----------------------------------------------------------------------------------------
+        Key_Strokes_Handler obj_Key_Strokes_Handler = new Key_Strokes_Handler();
+
+        //----------------------------------------------------------------------------------------
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        //-----------------------------------------------------------------------------------------
+        private void handle_The_Keys_Strokes(object sender, KeyEventArgs e)
+        {
+            obj_Key_Strokes_Handler.handle_The_Keys_Strokes(e);
         }
     }
 }
