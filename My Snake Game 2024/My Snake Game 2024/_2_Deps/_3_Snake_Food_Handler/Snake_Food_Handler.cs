@@ -159,7 +159,7 @@ namespace My_Snake_Game_2024._2_Deps._3_Snake_Food_Handler
                 var snake_Part = obj_List_Of_Snake_Parts_Handler.get_Item_From_The_List(i);
                 int snake_Part_Col = Grid.GetColumn(snake_Part);
                 int snake_Part_Row = Grid.GetRow(snake_Part);
-                int[] arr_One_Snake_Part_Cols_And_Rows = new int[] { snake_Part_Col, snake_Part_Row };
+                int[] arr_One_Snake_Part_Cols_And_Rows = new int[] { snake_Part_Row, snake_Part_Col };
                 li_Of_Snake_Parts_Cols_And_Rows.Add(arr_One_Snake_Part_Cols_And_Rows);
             }
             ///-    /// 1- create 2 random numbers.

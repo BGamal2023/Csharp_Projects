@@ -31,6 +31,7 @@ namespace My_Snake_Game_2024._1_Managers
     internal class General_Manager
     {
         //------------------------------------------------------------------------------------
+        #region Fields
         Snake_Body_Handler obj_Snake_Body_Handler =new Snake_Body_Handler();
         Snake_Moving_Handler obj_Snake_Moving_Handler=new Snake_Moving_Handler();
         Snake_Food_Handler obj_Snake_Food_Handler=new Snake_Food_Handler();
@@ -39,31 +40,29 @@ namespace My_Snake_Game_2024._1_Managers
         Score_Handler obj_Score_Handler=new Score_Handler();
         Game_Level_Handler obj_Game_Level_Handler=new Game_Level_Handler();
         Game_Area_Handler obj_Game_Area_Handler = new Game_Area_Handler();
+        #endregion
         //------------------------------------------------------------------------------------
+        #region Main_Method
         public Grid start_The_Game(MainWindow mainwindow)
         {
+            //--
             Grid gameArea = obj_Game_Area_Handler.handle_The_Game_Area(mainwindow);
-                add_The_Snake_Head_To_The_gameArea(gameArea);
-            /// obj_Snake_Food_Handler.feed_The_Snake_V0(gameArea);
+            //--
+            add_The_Snake_Head_To_The_gameArea(gameArea);
+            //--
             obj_Snake_Food_Handler.feed_The_Snake_V1(gameArea);
-            
-             
+            //--
             return gameArea;
+            //--
         }
         //------------------------------------------------------------------------------------
-        public void handle_The_Snake_In_The_gameArea(
-            DispatcherTimer gameTimer,
-            Grid gameArea
-           )
+        public void handle_The_Snake_In_The_gameArea(DispatcherTimer gameTimer,Grid gameArea)
         {
-
             start_The_Timer_That_Will_Cyclically_Call_The_Snake_Handling_Methods(gameTimer,gameArea);
-         
-
-    
-        
         }
+        #endregion
         //------------------------------------------------------------------------------------
+        #region Auxilary Methods
         private void start_The_Timer_That_Will_Cyclically_Call_The_Snake_Handling_Methods(DispatcherTimer gameTimer, Grid gameArea)
         {
             //--
@@ -90,7 +89,7 @@ namespace My_Snake_Game_2024._1_Managers
             )
         {
             //--
-          ///  check_Dead_Collision(gameTimer);
+          check_Dead_Collision(gameTimer);
             //--
             move_The_Snake();
             //--
@@ -223,9 +222,8 @@ namespace My_Snake_Game_2024._1_Managers
             mainWindow.Content=level_Value;
             //--
         }
+        #endregion
         //------------------------------------------------------------------------------------
-
-
     }
 
 

@@ -15,43 +15,39 @@ using System.Windows.Threading;
 
 namespace My_Snake_Game_2024
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+   
     public partial class MainWindow : Window
     {
+
         //----------------------------------------------------------------------------------------
+        #region Fields
         General_Manager obj_General_Manager = new General_Manager();
         Key_Strokes_Handler obj_Key_Strokes_Handler = new Key_Strokes_Handler();
         DispatcherTimer myTimer = new DispatcherTimer();
         Food_Posit_Handler obj_Food_Posit_Handler = new Food_Posit_Handler();
+        #endregion
         //----------------------------------------------------------------------------------------
+        #region App Entry Point
         public MainWindow()
         {
-            try
-            {
+            
                 InitializeComponent();
                 //--
                 Grid gameArea = obj_General_Manager.start_The_Game(this);
                 //--
                 obj_General_Manager.handle_The_Snake_In_The_gameArea(myTimer, gameArea);
                 //--
-                List<int[]> positions = obj_Food_Posit_Handler.get_All_Positions_For_gameArea();
-                obj_Food_Posit_Handler.print_All_gameArea_positions(positions);
-            }
-            catch (Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine(ex.Message);
-                System.Diagnostics.Debug.WriteLine(ex.StackTrace);
-
-            }
-
         }
+        #endregion
+        //----------------------------------------------------------------------------------------
+        #region Key Strokes Handling
 
-        //-----------------------------------------------------------------------------------------
         private void handle_The_Keys_Strokes(object sender, KeyEventArgs e)
         {
             obj_Key_Strokes_Handler.handle_The_Keys_Strokes(e);
         }
+        #endregion
+        //----------------------------------------------------------------------------------------
+
     }
 }
