@@ -23,6 +23,7 @@ using Label = System.Windows.Controls.Label;
 using My_Snake_Game_2024._2_Deps._5_Game_Levels_Handler;
 using My_Snake_Game_2024._2_Deps._A_10_Game_Area_Handler;
 using My_Snake_Game_2024;
+using My_Snake_Game_2024._2_Deps._9_List_Of_Snake_Pieces_Handler;
 
 
 namespace My_Snake_Game_2024._1_Managers
@@ -32,18 +33,32 @@ namespace My_Snake_Game_2024._1_Managers
     {
         //------------------------------------------------------------------------------------
         #region Fields
-        Snake_Body_Handler obj_Snake_Body_Handler =new Snake_Body_Handler();
-        Snake_Moving_Handler obj_Snake_Moving_Handler=new Snake_Moving_Handler();
-        Snake_Food_Handler obj_Snake_Food_Handler=new Snake_Food_Handler();
-        Food_Collision_Handler obj_Food_Collision_Handler=new Food_Collision_Handler();
-        Dead_Collision_Handler obj_Dead_Collision_Handler=new Dead_Collision_Handler();
-        Score_Handler obj_Score_Handler=new Score_Handler();
-        Game_Level_Handler obj_Game_Level_Handler=new Game_Level_Handler();
-        Game_Area_Handler obj_Game_Area_Handler = new Game_Area_Handler();
+        private Snake_Body_Handler obj_Snake_Body_Handler =new Snake_Body_Handler();
+        private Snake_Moving_Handler obj_Snake_Moving_Handler=new Snake_Moving_Handler();
+        private Snake_Food_Handler obj_Snake_Food_Handler=new Snake_Food_Handler();
+        private Food_Collision_Handler obj_Food_Collision_Handler=new Food_Collision_Handler();
+        private Dead_Collision_Handler obj_Dead_Collision_Handler=new Dead_Collision_Handler();
+        private Score_Handler obj_Score_Handler=new Score_Handler();
+        private Game_Level_Handler obj_Game_Level_Handler=new Game_Level_Handler();
+        private Game_Area_Handler obj_Game_Area_Handler = new Game_Area_Handler();
+        private List_Of_Snake_Pieces_Handler obj_List_Of_Snake_Parts_Handler=new List_Of_Snake_Pieces_Handler();
         #endregion
         //------------------------------------------------------------------------------------
         #region Main_Method
-        public Grid start_The_Game(MainWindow mainwindow)
+        public void start_The_Game(MainWindow mainWindow,DispatcherTimer gameTimer)
+        {
+            //--
+            Grid gameArea = draw_The_Grid_Cols_And_Rows_And_Add_The_First_Snake_Part_And_Food(mainWindow);
+            //--
+            handle_The_Snake_In_The_gameArea(gameTimer, gameArea);
+            //--
+        }
+
+
+        #endregion
+        //------------------------------------------------------------------------------------
+        #region Auxilary Methods
+        private Grid draw_The_Grid_Cols_And_Rows_And_Add_The_First_Snake_Part_And_Food(MainWindow mainwindow)
         {
             //--
             Grid gameArea = obj_Game_Area_Handler.handle_The_Game_Area(mainwindow);
@@ -56,28 +71,26 @@ namespace My_Snake_Game_2024._1_Managers
             //--
         }
         //------------------------------------------------------------------------------------
-        public void handle_The_Snake_In_The_gameArea(DispatcherTimer gameTimer,Grid gameArea)
+        private void handle_The_Snake_In_The_gameArea(DispatcherTimer gameTimer,Grid gameArea)
         {
-            start_The_Timer_That_Will_Cyclically_Call_The_Snake_Handling_Methods(gameTimer,gameArea);
+            create_And_Start_The_Timer_That_Will_Cyclically_Call_The_Snake_Handling_Methods(gameTimer,gameArea);
         }
-        #endregion
         //------------------------------------------------------------------------------------
-        #region Auxilary Methods
-        private void start_The_Timer_That_Will_Cyclically_Call_The_Snake_Handling_Methods(DispatcherTimer gameTimer, Grid gameArea)
+        private void create_And_Start_The_Timer_That_Will_Cyclically_Call_The_Snake_Handling_Methods(
+            DispatcherTimer gameTimer, Grid gameArea)
         {
             //--
-            gameTimer.Tick += (sender, e) =>
-            {
-                //--
-                /// timer_Tick_Callback(
-                /// sender, e, gameArea, gameTimer, scoreValue, playerHealth, level);*/
-                timer_Tick_Callback(sender, e, gameArea, gameTimer);
-                //--
-            };
+            #region define The Timer Tick Callback(the method that the timer will cyclically call).
+            gameTimer.Tick += (sender, e) =>{ timer_Tick_Callback(sender, e, gameArea, gameTimer);};
+            #endregion
             //--
+            #region Set Timer Interval(The Game Speed).
             gameTimer.Interval = TimeSpan.FromMilliseconds(Globals.timerTick);
+            #endregion
             //--
+            #region Start The Timer
             gameTimer.Start();
+            #endregion
             //--
         }
         //------------------------------------------------------------------------------------
@@ -85,8 +98,7 @@ namespace My_Snake_Game_2024._1_Managers
             object? sender, 
             EventArgs e, 
             Grid gameArea,
-            DispatcherTimer gameTimer
-            )
+            DispatcherTimer gameTimer )
         {
             //--
           check_Dead_Collision(gameTimer);
@@ -100,68 +112,69 @@ namespace My_Snake_Game_2024._1_Managers
            /// update_Player_Score( scoreValue);
            /// update_Player_Healthy(playerHealth);
            /// update_The_Game_Level(level,gameTimer);
-
-
         }
         //------------------------------------------------------------------------------------
-        public void add_The_Snake_Head_To_The_gameArea(Grid gameArea)
-        {
+        private void add_The_Snake_Head_To_The_gameArea(Grid gameArea)
+        {   
             obj_Snake_Body_Handler.add_The_Head_Of_The_Snake_To_The_List_Of_Snake_Parts(
                 gameArea);
         }
         //------------------------------------------------------------------------------------
-        public void move_The_Snake()
+        private void move_The_Snake()
         {
             //--
             if (Global_Directions.goRight)
             {
-                obj_Snake_Moving_Handler.move_Snake_To_Selected_Direction(Global_Directions.str_goRight);
+                obj_Snake_Moving_Handler.move_The_Snake_To_The_Selected_Dir(Global_Directions.str_goRight);
             }
             //--
             else if (Global_Directions.goLeft)
             {
-                obj_Snake_Moving_Handler.move_Snake_To_Selected_Direction(Global_Directions.str_goLeft);
+                obj_Snake_Moving_Handler.move_The_Snake_To_The_Selected_Dir(Global_Directions.str_goLeft);
             }
             //--
             else if (Global_Directions.goUp)
             {
-                obj_Snake_Moving_Handler.move_Snake_To_Selected_Direction(Global_Directions.str_goUp);
+                obj_Snake_Moving_Handler.move_The_Snake_To_The_Selected_Dir(Global_Directions.str_goUp);
             }
             //--
             else if (Global_Directions.goDown)
             {
-                obj_Snake_Moving_Handler.move_Snake_To_Selected_Direction(Global_Directions.str_goDown);
+                obj_Snake_Moving_Handler.move_The_Snake_To_The_Selected_Dir(Global_Directions.str_goDown);
             }
             //--
             else
             {
-                obj_Snake_Moving_Handler.move_Snake_To_Selected_Direction(Global_Directions.str_goRight);
+                obj_Snake_Moving_Handler.move_The_Snake_To_The_Selected_Dir(Global_Directions.str_goRight);
             }
             //--
 
        
         }
         //------------------------------------------------------------------------------------
-        public void check_Food_Collision()
+        private void check_Food_Collision()
         {
             obj_Food_Collision_Handler.detect_The_Food_Collision();
         }
         //------------------------------------------------------------------------------------
-        public void feed_The_Snake(Grid gameArea)
+        private void feed_The_Snake(Grid gameArea)
         {
             //--
             if (Globals.isFoodCollisionOccurred == true)
-            {
+            {   //--
                 obj_Snake_Food_Handler.eat_Snake_Food(gameArea);
+                //--
                 obj_Snake_Body_Handler.add_New_Part_To_Body_Of_The_Snake(gameArea);
-               /// obj_Snake_Food_Handler.feed_The_Snake_V0(gameArea);
+                //--
                 obj_Snake_Food_Handler.feed_The_Snake_V1(gameArea);
+                //--
                 Globals.isFoodCollisionOccurred = false;
+                //--
             }
             //--
         }
         //------------------------------------------------------------------------------------
-        public void check_Dead_Collision(DispatcherTimer gameTimer)
+        private void check_Dead_Collision(DispatcherTimer gameTimer)
         {
             //--
             obj_Dead_Collision_Handler.detect_The_Dead_Collision();
@@ -170,7 +183,7 @@ namespace My_Snake_Game_2024._1_Managers
             //--
         }
         //------------------------------------------------------------------------------------
-        public void end_The_Game(DispatcherTimer gameTimer)
+        private void end_The_Game(DispatcherTimer gameTimer)
         {
             //--
             if (Globals.isDeadCollisionOccurued == true)
@@ -187,21 +200,21 @@ namespace My_Snake_Game_2024._1_Managers
             //--
         }
         //------------------------------------------------------------------------------------
-        public void update_Player_Score(Label scoreValue)
+        private void update_Player_Score(Label scoreValue)
         {
             //--
             obj_Score_Handler.update_Player_Sore(scoreValue);
             //--
         }
         //------------------------------------------------------------------------------------
-        public void update_Player_Healthy(Label player_Healthy)
+        private void update_Player_Healthy(Label player_Healthy)
         {
             //--
             player_Healthy.Content = Globals.playerHealth;
             //--
         }
         //------------------------------------------------------------------------------------
-        public void update_The_Game_Level(Label levelValue,DispatcherTimer gameTimer)
+        private void update_The_Game_Level(Label levelValue,DispatcherTimer gameTimer)
         {
             //--
             levelValue.Content = Globals.Level;
@@ -209,21 +222,9 @@ namespace My_Snake_Game_2024._1_Managers
             obj_Game_Level_Handler.update_Game_Level(gameTimer);
             //--
         }
-        //------------------------------------------------------------------------------------
-        public void add_Some_Other_Components_To_mainWidow(MainWindow mainWindow)
-        {
-           //--
-            Label Score_Value=new Label();
-            Label player_Healthy=new Label();
-            Label level_Value=new Label();
-            //--
-            mainWindow.Content = Score_Value;
-            mainWindow.Content=player_Healthy;
-            mainWindow.Content=level_Value;
-            //--
-        }
         #endregion
         //------------------------------------------------------------------------------------
+
     }
 
 

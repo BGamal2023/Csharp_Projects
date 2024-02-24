@@ -16,5 +16,6 @@ namespace My_Snake_Game_2024.My_Libs.My_Lib_1.Globals
         public static string str_goLeft = "goLeft";
         public static string str_goUp = "goUp";
         public static string str_goDown = "goDown";
+        public static bool game_Pause = false;
     }
 }

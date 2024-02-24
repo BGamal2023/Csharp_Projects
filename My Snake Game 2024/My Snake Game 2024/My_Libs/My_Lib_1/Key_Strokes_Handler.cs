@@ -56,6 +56,7 @@ namespace My_Snake_Game_2024.My_Libs.My_Lib_1
                     break;
 
                 case Key.Space:
+
                     break;
             }
 

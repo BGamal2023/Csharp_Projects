@@ -1,7 +1,7 @@
 ﻿using My_Snake_Game_2024.__Globals;
 using My_Snake_Game_2024._2_Deps._1_Snake_Body_Handler;
 using My_Snake_Game_2024._2_Deps._3_Snake_Food_Handler;
-using My_Snake_Game_2024._2_Deps._9_List_Of_Snake_Parts_Handler;
+using My_Snake_Game_2024._2_Deps._9_List_Of_Snake_Pieces_Handler;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -17,9 +17,9 @@ namespace My_Snake_Game_2024._2_Deps._4_Collision_Handler
     {
         public void detect_The_Food_Collision()
         {
-            List_Of_Snake_Parts_Handler obj_List_Of_Snake_Parts_Handler=new List_Of_Snake_Parts_Handler();
+            List_Of_Snake_Pieces_Handler obj_List_Of_Snake_Parts_Handler=new List_Of_Snake_Pieces_Handler();
             //--
-            UIElement SnakeHead = obj_List_Of_Snake_Parts_Handler.get_Item_From_The_List(0);
+            UIElement SnakeHead = obj_List_Of_Snake_Parts_Handler.get_One_Piece_From_The_Snake_Pieces_List(0);
             UIElement food_Rec = Globals.list_Snake_Food[0];
             int curCol_SnakeHead = Grid.GetColumn(SnakeHead);
             int curCol_food_Rec=Grid.GetColumn(food_Rec);

@@ -1,7 +1,7 @@
 ﻿using My_Snake_Game_2024.__Globals;
 using My_Snake_Game_2024._2_Deps._1_Snake_Body_Handler;
 using My_Snake_Game_2024._2_Deps._8_Create_Rectangle;
-using My_Snake_Game_2024._2_Deps._9_List_Of_Snake_Parts_Handler;
+using My_Snake_Game_2024._2_Deps._9_List_Of_Snake_Pieces_Handler;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +17,7 @@ namespace My_Snake_Game_2024._2_Deps._3_Snake_Food_Handler
     {
         //-------------------------------------------------------------------------
         Creating_Rect obj_Creating_Rect = new Creating_Rect();
-        List_Of_Snake_Parts_Handler obj_List_Of_Snake_Parts_Handler=new List_Of_Snake_Parts_Handler();
+        List_Of_Snake_Pieces_Handler obj_List_Of_Snake_Parts_Handler=new List_Of_Snake_Pieces_Handler();
         List<int[]> li_Of_Snake_Parts_Cols_And_Rows = new List<int[]>();
         //-------------------------------------------------------------------------
         public void feed_The_Snake_V0(Grid gameArea)
@@ -86,12 +86,12 @@ namespace My_Snake_Game_2024._2_Deps._3_Snake_Food_Handler
             List<int> list_Of_Curr_Avail_Food_Cols=new List<int>();
             List<int> list_Of_Curr_Avail_Food_Rows;
 
-            int list_Count = obj_List_Of_Snake_Parts_Handler.get_The_Count_Of_list_Of_The_Snake_Parts();
+            int list_Count = obj_List_Of_Snake_Parts_Handler.get_The_Count_Of_The_Snake_Pieces();
 
             //------ get list of current cols and rows for the snake.
             for (int i=0; i<list_Count; i++)
             {
-                var snake_Part=obj_List_Of_Snake_Parts_Handler.get_Item_From_The_List(i);
+                var snake_Part=obj_List_Of_Snake_Parts_Handler.get_One_Piece_From_The_Snake_Pieces_List(i);
                 int current_Col=Grid.GetColumn(snake_Part);
                 int current_Row=Grid.GetRow(snake_Part);
                 list_current_Snake_Parts_Cols.Add(current_Col);
@@ -153,10 +153,10 @@ namespace My_Snake_Game_2024._2_Deps._3_Snake_Food_Handler
           
 
             li_Of_Snake_Parts_Cols_And_Rows.Clear();
-            int counts_Snake_Body = obj_List_Of_Snake_Parts_Handler.get_The_Count_Of_list_Of_The_Snake_Parts();
+            int counts_Snake_Body = obj_List_Of_Snake_Parts_Handler.get_The_Count_Of_The_Snake_Pieces();
             for (int i = 0; i < counts_Snake_Body; i++)
             {
-                var snake_Part = obj_List_Of_Snake_Parts_Handler.get_Item_From_The_List(i);
+                var snake_Part = obj_List_Of_Snake_Parts_Handler.get_One_Piece_From_The_Snake_Pieces_List(i);
                 int snake_Part_Col = Grid.GetColumn(snake_Part);
                 int snake_Part_Row = Grid.GetRow(snake_Part);
                 int[] arr_One_Snake_Part_Cols_And_Rows = new int[] { snake_Part_Row, snake_Part_Col };

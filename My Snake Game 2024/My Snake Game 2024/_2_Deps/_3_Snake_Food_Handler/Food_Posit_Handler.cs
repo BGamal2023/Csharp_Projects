@@ -1,5 +1,5 @@
 ﻿using My_Snake_Game_2024.__Globals;
-using My_Snake_Game_2024._2_Deps._9_List_Of_Snake_Parts_Handler;
+using My_Snake_Game_2024._2_Deps._9_List_Of_Snake_Pieces_Handler;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +13,7 @@ namespace Snake_Game._2_Deps._3_Snake_Food_Handler
     {
         //-----------------------------------------------------------------------------------------
         List<int[]> gameArea_Positions = new List<int[]>();
-        List_Of_Snake_Parts_Handler obj_List_Of_Snake_Parts_Handler=new List_Of_Snake_Parts_Handler();
+        List_Of_Snake_Pieces_Handler obj_List_Of_Snake_Parts_Handler=new List_Of_Snake_Pieces_Handler();
         List<int[]> list_Snake_Parts_Postitions=new List<int[]>();
         //-----------------------------------------------------------------------------------------
      /*   public int get_col_Nu_for_Snake_Food()
@@ -63,13 +63,13 @@ namespace Snake_Game._2_Deps._3_Snake_Food_Handler
         private List<int[]> get_Snake_Body_Positions()
         {
             //--
-            int count=obj_List_Of_Snake_Parts_Handler.get_The_Count_Of_list_Of_The_Snake_Parts();
+            int count=obj_List_Of_Snake_Parts_Handler.get_The_Count_Of_The_Snake_Pieces();
 
             //--
             for(int i=0; i < count; i++)
             {
                 //--
-                var snake_part = obj_List_Of_Snake_Parts_Handler.get_Item_From_The_List(i);
+                var snake_part = obj_List_Of_Snake_Parts_Handler.get_One_Piece_From_The_Snake_Pieces_List(i);
                 int col=Grid.GetColumn(snake_part);
                 int row=Grid.GetRow(snake_part);
                 int[] snake_Part_Position=new int[] { row, col };

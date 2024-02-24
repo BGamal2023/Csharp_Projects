@@ -18,25 +18,21 @@ namespace My_Snake_Game_2024
    
     public partial class MainWindow : Window
     {
-
         //----------------------------------------------------------------------------------------
         #region Fields
         General_Manager obj_General_Manager = new General_Manager();
         Key_Strokes_Handler obj_Key_Strokes_Handler = new Key_Strokes_Handler();
-        DispatcherTimer myTimer = new DispatcherTimer();
-        Food_Posit_Handler obj_Food_Posit_Handler = new Food_Posit_Handler();
+        DispatcherTimer gameTimer = new DispatcherTimer();
         #endregion
         //----------------------------------------------------------------------------------------
         #region App Entry Point
         public MainWindow()
         {
-            
-                InitializeComponent();
-                //--
-                Grid gameArea = obj_General_Manager.start_The_Game(this);
-                //--
-                obj_General_Manager.handle_The_Snake_In_The_gameArea(myTimer, gameArea);
-                //--
+            //--
+            InitializeComponent();
+            //--
+            obj_General_Manager.start_The_Game(this,gameTimer);
+            //--
         }
         #endregion
         //----------------------------------------------------------------------------------------
@@ -48,6 +44,5 @@ namespace My_Snake_Game_2024
         }
         #endregion
         //----------------------------------------------------------------------------------------
-
     }
 }

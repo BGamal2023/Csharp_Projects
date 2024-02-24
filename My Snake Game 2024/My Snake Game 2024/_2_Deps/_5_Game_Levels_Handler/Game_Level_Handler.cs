@@ -1,5 +1,5 @@
 ﻿using My_Snake_Game_2024.__Globals;
-using My_Snake_Game_2024._2_Deps._9_List_Of_Snake_Parts_Handler;
+using My_Snake_Game_2024._2_Deps._9_List_Of_Snake_Pieces_Handler;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,12 +12,12 @@ namespace My_Snake_Game_2024._2_Deps._5_Game_Levels_Handler
     internal class Game_Level_Handler
     {
         //-----------------------------------------------------------------------------------------------
-        List_Of_Snake_Parts_Handler obj_List_Of_Snake_Parts_Handler=new List_Of_Snake_Parts_Handler();
+        List_Of_Snake_Pieces_Handler obj_List_Of_Snake_Parts_Handler=new List_Of_Snake_Pieces_Handler();
         //-----------------------------------------------------------------------------------------------
         public void update_Game_Level(DispatcherTimer gameTimer)
         {
             //--
-            int listCount=obj_List_Of_Snake_Parts_Handler.get_The_Count_Of_list_Of_The_Snake_Parts();
+            int listCount=obj_List_Of_Snake_Parts_Handler.get_The_Count_Of_The_Snake_Pieces();
             //--
             if (listCount == Globals.Score_Level_1)
             {

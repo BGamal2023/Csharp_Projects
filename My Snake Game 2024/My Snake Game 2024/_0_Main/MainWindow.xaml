@@ -7,5 +7,6 @@
         mc:Ignorable="d"
          Title="MainWindow" Height="700" Width="700"
         KeyDown="handle_The_Keys_Strokes">
-  
+    <Label Content="sna" Background="Black" HorizontalAlignment="Center" Margin="594,41,0,0" VerticalAlignment="Top" Width="96" Height="58" RenderTransformOrigin="0.433,0.004"/>
+
 </Window>

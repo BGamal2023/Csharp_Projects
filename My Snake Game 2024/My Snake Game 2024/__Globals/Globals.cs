@@ -23,7 +23,7 @@ namespace My_Snake_Game_2024.__Globals
         public static int gameArea_MaxHeight = 700;
         public static bool isFoodCollisionOccurred = false;
         public static bool isDeadCollisionOccurued=false;
-        public static int timerTick = 200;
+        public static int timerTick = 100;
         public static UIElement collisionRec;
         public static int snake_Head_X = 5;
         public static int snake_Head_Y = 5;
