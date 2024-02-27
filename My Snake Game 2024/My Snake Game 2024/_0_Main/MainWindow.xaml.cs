@@ -1,6 +1,5 @@
 ﻿using My_Snake_Game_2024._1_Managers;
 using My_Snake_Game_2024.My_Libs.My_Lib_1;
-using Snake_Game._2_Deps._3_Snake_Food_Handler;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;

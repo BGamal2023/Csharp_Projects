@@ -15,8 +15,8 @@ namespace My_Snake_Game_2024.__Globals
     {
      
      
-        public string key_Col_Body_ = "Col_Position_At_Pressing_For_Body_";
-        public string key_Row_Body_ = "Row_Position_At_Pressing_For_Body_";
+        public static string key_Col_Body_ = "Col_Position_At_Pressing_For_Body_";
+        public static string key_Row_Body_ = "Row_Position_At_Pressing_For_Body_";
         public static bool did_A_Collision_Occur=false;
         public static List<Rectangle> list_Snake_Food=new List<Rectangle>();
         public static int gameArea_MaxWidth=700;

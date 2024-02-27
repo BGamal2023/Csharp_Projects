@@ -34,7 +34,7 @@ namespace My_Snake_Game_2024._1_Managers
         //------------------------------------------------------------------------------------
         #region Fields
         private Snake_Body_Handler obj_Snake_Body_Handler =new Snake_Body_Handler();
-        private Snake_Moving_Handler obj_Snake_Moving_Handler=new Snake_Moving_Handler();
+        private _0_Snake_Moving_Manager obj_Snake_Moving_Handler=new _0_Snake_Moving_Manager();
         private Snake_Food_Handler obj_Snake_Food_Handler=new Snake_Food_Handler();
         private Food_Collision_Handler obj_Food_Collision_Handler=new Food_Collision_Handler();
         private Dead_Collision_Handler obj_Dead_Collision_Handler=new Dead_Collision_Handler();
@@ -65,7 +65,7 @@ namespace My_Snake_Game_2024._1_Managers
             //--
             add_The_Snake_Head_To_The_gameArea(gameArea);
             //--
-            obj_Snake_Food_Handler.feed_The_Snake_V1(gameArea);
+            obj_Snake_Food_Handler.feed_The_Snake(gameArea);
             //--
             return gameArea;
             //--
@@ -101,9 +101,9 @@ namespace My_Snake_Game_2024._1_Managers
             DispatcherTimer gameTimer )
         {
             //--
-          check_Dead_Collision(gameTimer);
-            //--
             move_The_Snake();
+            //--
+          ///  check_Dead_Collision(gameTimer);
             //--
             feed_The_Snake(gameArea);
             //--
@@ -166,7 +166,7 @@ namespace My_Snake_Game_2024._1_Managers
                 //--
                 obj_Snake_Body_Handler.add_New_Part_To_Body_Of_The_Snake(gameArea);
                 //--
-                obj_Snake_Food_Handler.feed_The_Snake_V1(gameArea);
+                obj_Snake_Food_Handler.feed_The_Snake(gameArea);
                 //--
                 Globals.isFoodCollisionOccurred = false;
                 //--

@@ -21,8 +21,10 @@ namespace My_Snake_Game_2024._2_Deps._1_Snake_Body_Handler
     class Snake_Body_Handler
     {
         //---------------------------------------------------------------------------------------
+        #region The Fields
         Creating_Rect obj_Creating_Rect =new Creating_Rect();
         List_Of_Snake_Pieces_Handler obj_List_Of_Snake_Parts_Handler=new List_Of_Snake_Pieces_Handler();
+        #endregion
         //---------------------------------------------------------------------------------------
         public void add_The_Head_Of_The_Snake_To_The_List_Of_Snake_Parts(Grid gameArea)
         {
@@ -38,64 +40,17 @@ namespace My_Snake_Game_2024._2_Deps._1_Snake_Body_Handler
             //--
             var last_Snake_Part = obj_List_Of_Snake_Parts_Handler.get_The_Last_Piece_In_The_Snake();
             //--
-            if (Global_Directions.goRight)
-            {
-                //--
-                int X = Grid.GetColumn(last_Snake_Part) - 1;
-                int Y = Grid.GetRow(last_Snake_Part);
-                if (X < 0)
-                {
-                    X = 0;
-                }
-                //--
-                add_During_Moving(gameArea, Globals.snake_Body_Color, X, Y);
-                //--
-            }
+            add_During_Moving_In_Right_Dir(last_Snake_Part, gameArea);
             //--
-            else if (Global_Directions.goLeft)
-            {
-                //--
-                int X = Grid.GetColumn(last_Snake_Part) + 1;
-                int Y = Grid.GetRow(last_Snake_Part);
-                if (X > Globals.No_Of_gameArea_Cols-1)
-                {
-                    X = 0;
-                }
-
-
-                //--
-                add_During_Moving(gameArea, Globals.snake_Body_Color, X, Y);
-                //--
-            }
+            add_During_Moving_In_Left_Dir(last_Snake_Part,gameArea);
             //--
-            else if (Global_Directions.goUp)
-            {
-                //--
-                int X = Grid.GetColumn(last_Snake_Part) ;
-                int Y = Grid.GetRow(last_Snake_Part) + 1;
-                //--
-                add_During_Moving(gameArea, Globals.snake_Body_Color, X, Y);
-                //--
-            }
+            add_During_Moving_In_Up_Dir(last_Snake_Part, gameArea);
             //--
-            else if (Global_Directions.goDown)
-            {
-                //--
-                
-                int X = Grid.GetColumn(last_Snake_Part);
-                int Y = Grid.GetRow(last_Snake_Part)-1;
-                if (Y < 0)
-                {
-                    Y = 0;
-                }
-                //--
-                add_During_Moving(gameArea, Globals.snake_Body_Color, X, Y);
-                //--
-            }
-            //---------------
+            add_During_Moving_In_Down_Dir(last_Snake_Part, gameArea);
+            //--
         }
         //---------------------------------------------------------------------------------------
-        private void add_During_Moving (Grid gameArea,Brush color,int X,int Y)
+        private void create_New_Snake_Piece_And_Add_It_To_The_List_Of_The_Snake_Pieces (Grid gameArea,Brush color,int X,int Y)
         {     
         //! bug#10 rename this method again
             //------
@@ -105,7 +60,7 @@ namespace My_Snake_Game_2024._2_Deps._1_Snake_Body_Handler
             //------
         }
         //---------------------------------------------------------------------------------------
-        private void add_In_Right_Direction_Case(Rectangle last_Snake_Part,Grid gameArea  )
+        private void add_During_Moving_In_Right_Dir(Rectangle last_Snake_Part,Grid gameArea  )
         {
             if (Global_Directions.goRight)
             {
@@ -117,13 +72,13 @@ namespace My_Snake_Game_2024._2_Deps._1_Snake_Body_Handler
                     X = 0;
                 }
                 //--
-                add_During_Moving(gameArea, Globals.snake_Body_Color, X, Y);
+                create_New_Snake_Piece_And_Add_It_To_The_List_Of_The_Snake_Pieces(gameArea, Globals.snake_Body_Color, X, Y);
                 //--
             }
             //--
         }
         //---------------------------------------------------------------------------------------
-        private void add_In_Left_Direction_Case(Rectangle last_Snake_Part, Grid gameArea)
+        private void add_During_Moving_In_Left_Dir(Rectangle last_Snake_Part, Grid gameArea)
         {
               if (Global_Directions.goLeft)
             {
@@ -135,10 +90,37 @@ namespace My_Snake_Game_2024._2_Deps._1_Snake_Body_Handler
                     X = 0;
                 }
                 //--
-                add_During_Moving(gameArea, Globals.snake_Body_Color, X, Y);
+                create_New_Snake_Piece_And_Add_It_To_The_List_Of_The_Snake_Pieces(gameArea, Globals.snake_Body_Color, X, Y);
                 //--
             }
         }
+        //---------------------------------------------------------------------------------------
+        private void add_During_Moving_In_Up_Dir(Rectangle last_Snake_Part, Grid gameArea) {
+         if (Global_Directions.goUp)
+            {
+                //--
+                int X = Grid.GetColumn(last_Snake_Part);
+                int Y = Grid.GetRow(last_Snake_Part) + 1;
+                //--
+                create_New_Snake_Piece_And_Add_It_To_The_List_Of_The_Snake_Pieces(gameArea, Globals.snake_Body_Color, X, Y);
+                //--
+            }
+        }
+        //---------------------------------------------------------------------------------------
+        private void add_During_Moving_In_Down_Dir(Rectangle last_Snake_Part, Grid gameArea) {
+             if (Global_Directions.goDown)
+            {
+                //--
+                int X = Grid.GetColumn(last_Snake_Part);
+                int Y = Grid.GetRow(last_Snake_Part) - 1;
+                //--
+                if (Y < 0){ Y = 0;}
+                //--
+                create_New_Snake_Piece_And_Add_It_To_The_List_Of_The_Snake_Pieces(gameArea, Globals.snake_Body_Color, X, Y);
+                //--
+            }
+        }
+        //---------------------------------------------------------------------------------------
 
 
     }

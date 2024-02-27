@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Printing;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -15,16 +16,22 @@ namespace My_Snake_Game_2024._2_Deps._4_Collision_Handler
 {
     internal class Food_Collision_Handler
     {
+        //----------------------------------------------------------------------------------------------------------------------
+        #region The Fields
+        private List_Of_Snake_Pieces_Handler obj_List_Of_Snake_Parts_Handler = new List_Of_Snake_Pieces_Handler();
+        #endregion
+        //----------------------------------------------------------------------------------------------------------------------
         public void detect_The_Food_Collision()
         {
-            List_Of_Snake_Pieces_Handler obj_List_Of_Snake_Parts_Handler=new List_Of_Snake_Pieces_Handler();
             //--
+            #region get current col and row for food and snake head
             UIElement SnakeHead = obj_List_Of_Snake_Parts_Handler.get_One_Piece_From_The_Snake_Pieces_List(0);
             UIElement food_Rec = Globals.list_Snake_Food[0];
             int curCol_SnakeHead = Grid.GetColumn(SnakeHead);
             int curCol_food_Rec=Grid.GetColumn(food_Rec);
             int curRow_SnakeHead=Grid.GetRow(SnakeHead);
             int curRow_food_Rec = Grid.GetRow(food_Rec);
+            #endregion 
             //--
             detect_The_Food_Collision_In_Right_Dir(curCol_SnakeHead, curCol_food_Rec,curRow_SnakeHead,curRow_food_Rec);
             //--
@@ -33,28 +40,28 @@ namespace My_Snake_Game_2024._2_Deps._4_Collision_Handler
             detect_The_Food_Collision_In_Up_Dir(curCol_SnakeHead, curCol_food_Rec, curRow_SnakeHead, curRow_food_Rec);
             //--
             detect_The_Food_Collision_In_Down_Dir(curCol_SnakeHead, curCol_food_Rec, curRow_SnakeHead, curRow_food_Rec);
-/*
-            if (curCol_SnakeHead==curCol_food_Rec && curRow_SnakeHead == curRow_food_Rec)
-            {
-                Globals.isFoodCollisionOccurred = true;
-                Globals.Score++;
-            }*/     //--
-
+            //--
         }
         //----------------------------------------------------------------------------------------------------------------------
         private void detect_The_Food_Collision_In_Right_Dir(int curCol_SnakeHead,int curCol_food_Rec,int curRow_SnakeHead, int curRow_food_Rec) {
+            //--
             if (Globals.currDirection == (int)Globals.En_currentDirection.right)
             {
-                if (
-                    (curCol_SnakeHead + 1 == curCol_food_Rec && curRow_SnakeHead==curRow_food_Rec) ||
-                    (curCol_SnakeHead == curCol_food_Rec && curRow_SnakeHead == curRow_food_Rec)
-                    )
+                //--
+
+                bool isCollisionOccurred = (curCol_SnakeHead + 1 == curCol_food_Rec && curRow_SnakeHead == curRow_food_Rec)
+                                                               ||
+                                            (curCol_SnakeHead == curCol_food_Rec && curRow_SnakeHead == curRow_food_Rec);
+                //--
+                if (isCollisionOccurred)
                 {
                     Globals.isFoodCollisionOccurred = true;
+
                     Globals.Score++;
                 }
+                //--
             }
-
+            //--
         }
         //----------------------------------------------------------------------------------------------------------------------
         private void detect_The_Food_Collision_In_Left_Dir(int curCol_SnakeHead, int curCol_food_Rec, int curRow_SnakeHead, int curRow_food_Rec) {
