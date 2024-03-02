@@ -15,23 +15,27 @@ namespace My_Snake_Game_2024._2_Deps._A_10_Game_Area_Handler
     internal class Game_Area_Handler
     {
         //-------------------------------------------------------------------------------------
+        #region The Fields
         private Grid gameArea = new Grid();
-        const string handle_The_Keys_Strokes = "handle_The_Keys_Strokes";
-        private Key_Strokes_Handler obj_Key_Strokes_Handler=new Key_Strokes_Handler();  
+        private const string handle_The_Keys_Strokes = "handle_The_Keys_Strokes";
+        private Key_Strokes_Handler obj_Key_Strokes_Handler=new Key_Strokes_Handler();
+        #endregion
         //-------------------------------------------------------------------------------------
-
         public Grid handle_The_Game_Area(MainWindow mainwindow)
         {
+            //--
             create_And_Add_Grid(mainwindow);
+            //--
             add_Required_Cols();
+            //--
             add_Required_Rows();
-
+            //--
             return gameArea;
         }
         //-------------------------------------------------------------------------------------
-
         private void create_And_Add_Grid(MainWindow mainwindow)
         {
+            //--
             gameArea.Name = Globals.gameArea_Name;
             gameArea.Focusable = true;
             gameArea.Background = Globals.gameArea_Background;
@@ -40,43 +44,36 @@ namespace My_Snake_Game_2024._2_Deps._A_10_Game_Area_Handler
             gameArea.ShowGridLines = true;
             gameArea.HorizontalAlignment = HorizontalAlignment.Left;
             gameArea.VerticalAlignment = VerticalAlignment.Top;
+            //--
             mainwindow.Content = gameArea;
+            //--
             gameArea.Focus();
-           // gameArea.AddHandler(Keyboard.AddKeyDownHandler,new);
-
-
+            //--
         }
-
-        
-
         //-------------------------------------------------------------------------------------
-
         private void add_Required_Cols()
         {
            for(int i=0; i < Globals.No_Of_gameArea_Cols; i++)
             {
-                
+                //--
                 ColumnDefinition col = new ColumnDefinition();
+                //--
                 gameArea.ColumnDefinitions.Add(col);
-
+                //--
             }
         }
         //-------------------------------------------------------------------------------------
-
         private void add_Required_Rows()
         {
             for(int i = 0; i < Globals.No_Of_gameArea_Rows; i++)
             {
+                //--
                 RowDefinition row = new RowDefinition();
+                //--
                 gameArea.RowDefinitions.Add(row);
+                //--
             }
-           
         }
         //-------------------------------------------------------------------------------------
-        private void add_Required_Items()
-        {
-
-        }
-
     }
 }

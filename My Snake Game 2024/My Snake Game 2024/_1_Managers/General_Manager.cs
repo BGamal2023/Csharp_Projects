@@ -50,7 +50,7 @@ namespace My_Snake_Game_2024._1_Managers
             //--
             Grid gameArea = draw_The_Grid_Cols_And_Rows_And_Add_The_First_Snake_Part_And_Food(mainWindow);
             //--
-            handle_The_Snake_In_The_gameArea(gameTimer, gameArea);
+            handle_The_Snake_In_The_gameArea(gameTimer, gameArea,mainWindow);
             //--
         }
 
@@ -71,17 +71,17 @@ namespace My_Snake_Game_2024._1_Managers
             //--
         }
         //------------------------------------------------------------------------------------
-        private void handle_The_Snake_In_The_gameArea(DispatcherTimer gameTimer,Grid gameArea)
+        private void handle_The_Snake_In_The_gameArea(DispatcherTimer gameTimer,Grid gameArea,MainWindow mainwindow)
         {
-            create_And_Start_The_Timer_That_Will_Cyclically_Call_The_Snake_Handling_Methods(gameTimer,gameArea);
+            create_And_Start_The_Timer_That_Will_Cyclically_Call_The_Snake_Handling_Methods(gameTimer,gameArea,mainwindow);
         }
         //------------------------------------------------------------------------------------
         private void create_And_Start_The_Timer_That_Will_Cyclically_Call_The_Snake_Handling_Methods(
-            DispatcherTimer gameTimer, Grid gameArea)
+            DispatcherTimer gameTimer, Grid gameArea,MainWindow mainwindow)
         {
             //--
             #region define The Timer Tick Callback(the method that the timer will cyclically call).
-            gameTimer.Tick += (sender, e) =>{ timer_Tick_Callback(sender, e, gameArea, gameTimer);};
+            gameTimer.Tick += (sender, e) =>{ timer_Tick_Callback(sender, e, gameArea, gameTimer,mainwindow);};
             #endregion
             //--
             #region Set Timer Interval(The Game Speed).
@@ -98,7 +98,8 @@ namespace My_Snake_Game_2024._1_Managers
             object? sender, 
             EventArgs e, 
             Grid gameArea,
-            DispatcherTimer gameTimer )
+            DispatcherTimer gameTimer ,
+            MainWindow mainwindow)
         {
             //--
             move_The_Snake();
@@ -107,7 +108,7 @@ namespace My_Snake_Game_2024._1_Managers
             //--
             feed_The_Snake(gameArea);
             //--
-            check_Food_Collision();
+            check_Food_Collision(mainwindow, gameArea   );
             //--
            /// update_Player_Score( scoreValue);
            /// update_Player_Healthy(playerHealth);
@@ -152,9 +153,9 @@ namespace My_Snake_Game_2024._1_Managers
        
         }
         //------------------------------------------------------------------------------------
-        private void check_Food_Collision()
+        private void check_Food_Collision(MainWindow mainwindow,Grid gameArea)
         {
-            obj_Food_Collision_Handler.detect_The_Food_Collision();
+            obj_Food_Collision_Handler.detect_The_Food_Collision(mainwindow,gameArea);
         }
         //------------------------------------------------------------------------------------
         private void feed_The_Snake(Grid gameArea)
@@ -224,7 +225,6 @@ namespace My_Snake_Game_2024._1_Managers
         }
         #endregion
         //------------------------------------------------------------------------------------
-
     }
 
 

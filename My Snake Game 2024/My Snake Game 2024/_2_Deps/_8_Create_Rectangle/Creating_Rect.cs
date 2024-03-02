@@ -13,14 +13,10 @@ namespace My_Snake_Game_2024._2_Deps._8_Create_Rectangle
 {
     internal class Creating_Rect
     {
-       
-
-        public Rectangle create_Rec(
-             Grid gameArea,
-            Brush color,
-            int X,
-            int Y)
+        //--------------------------------------------------------------------------------------
+        public Rectangle create_Rec(Grid gameArea,Brush color,int X,int Y)
         {
+            //--
             Rectangle rec = new Rectangle()
             {
                 Width = Globals.snake_Width,
@@ -28,16 +24,15 @@ namespace My_Snake_Game_2024._2_Deps._8_Create_Rectangle
                 Fill = color,
                 Stroke = Brushes.Black,
                 StrokeThickness = 1
-
             };
-
+            //--
             gameArea.Children.Add(rec);
+            //--
             Grid.SetColumn(rec, X);
             Grid.SetRow(rec, Y);
-            
-        
-
+            //--
             return rec;
+            //--
         }
         //------------------------------------------------------------------------------------------
 

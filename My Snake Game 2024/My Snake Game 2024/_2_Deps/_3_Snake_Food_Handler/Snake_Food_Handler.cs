@@ -17,29 +17,25 @@ namespace My_Snake_Game_2024._2_Deps._3_Snake_Food_Handler
     {
         //-------------------------------------------------------------------------
         #region Fields
-        private Creating_Rect obj_Creating_Rect = new Creating_Rect();
-        private List_Of_Snake_Pieces_Handler obj_List_Of_Snake_Parts_Handler=new List_Of_Snake_Pieces_Handler();
-        private List<int[]> li_Of_Snake_Parts_Cols_And_Rows = new List<int[]>();
-        private Creation_Random_X_And_Y obj_Creation_Random_X_And_Y=new Creation_Random_X_And_Y();
+        Creating_Rect obj_Creating_Rect = new Creating_Rect();
+        List_Of_Snake_Pieces_Handler obj_List_Of_Snake_Parts_Handler=new List_Of_Snake_Pieces_Handler();
+        List<int[]> li_Of_Snake_Parts_Cols_And_Rows = new List<int[]>();
         #endregion
         //-------------------------------------------------------------------------
-        #region The Main Method
         public void feed_The_Snake(Grid gameArea)
         {
             //--
-            int[] arr_Of_Next_Food_Col_and_Row = obj_Creation_Random_X_And_Y.get_Random_Row_And_Col_For_Snake_Food(gameArea);
+            int[] arr_Of_Next_Food_Col_and_Row = get_The_Random_Row_And_Col_For_Snake_Food(gameArea);
             //--
-            var snakeFood=create_The_Food(gameArea, arr_Of_Next_Food_Col_and_Row[0], arr_Of_Next_Food_Col_and_Row[1]);
+            var snakeFood=create_Food_Retangle(gameArea, arr_Of_Next_Food_Col_and_Row[0], arr_Of_Next_Food_Col_and_Row[1]);
             //--
             Globals.list_Snake_Food.Add(snakeFood);
             //--
             Globals.isFoodCollisionOccurred = false;
             //--
         }
-        #endregion
         //-------------------------------------------------------------------------
-        #region The Auxilary Methods
-       /* private int[] get_Random_Row_And_Col_For_Snake_Food(Grid gameArea)
+        private int[] get_The_Random_Row_And_Col_For_Snake_Food(Grid gameArea)
         {
             //--
             li_Of_Snake_Parts_Cols_And_Rows.Clear();
@@ -80,7 +76,7 @@ namespace My_Snake_Game_2024._2_Deps._3_Snake_Food_Handler
 
             if (isMatching)
             {
-                return get_Random_Row_And_Col_For_Snake_Food(gameArea);
+                return get_The_Random_Row_And_Col_For_Snake_Food(gameArea);
             }
             else
             {
@@ -91,9 +87,9 @@ namespace My_Snake_Game_2024._2_Deps._3_Snake_Food_Handler
 
             //----------
 
-        }*/
+        }
         //-------------------------------------------------------------------------
-        private Rectangle create_The_Food(Grid gameArea,int X,int Y)
+        private Rectangle create_Food_Retangle(Grid gameArea,int X,int Y)
         {
             var snakeFood = obj_Creating_Rect.create_Rec(
                  gameArea,
@@ -109,7 +105,6 @@ namespace My_Snake_Game_2024._2_Deps._3_Snake_Food_Handler
             gameArea.Children.Remove(Globals.list_Snake_Food[0]);
             Globals.list_Snake_Food.Clear();
         }
-        #endregion
         //-------------------------------------------------------------------------
     }
 }

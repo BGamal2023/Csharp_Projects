@@ -10,9 +10,11 @@ namespace My_Snake_Game_2024._2_Deps._7_Player_Score_Handler
 {
     internal class Score_Handler
     {
+        //----------------------------------------------------------------------------------------
         public void update_Player_Sore(Label scoreValue)
         {
             scoreValue.Content = Globals.Score;
         }
+        //----------------------------------------------------------------------------------------
     }
 }
