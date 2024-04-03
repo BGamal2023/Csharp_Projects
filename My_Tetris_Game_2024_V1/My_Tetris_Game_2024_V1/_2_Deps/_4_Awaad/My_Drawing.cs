@@ -20,7 +20,7 @@ namespace My_Tetris_Game_2024_V1._2_Deps._4_Awaad
               gameArea.Children.Clear();
             foreach (My_Rect_For_Shapes i_My_Rect in the_Choosen_Shape)
             {
-                Rectangle i_Rect = new Rectangle()
+                 Rectangle i_Rect = new Rectangle()
                 {
                     Width = Globals.block_piece_Width,
                     Height = Globals.block_piece_Hight,
