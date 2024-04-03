@@ -1,0 +1,44 @@
+E:\Programming\12_C#\Csharp_Projects\Test1\Test1\bin\Debug\net8.0-windows\My_Tetris_Game_2024.exe
+E:\Programming\12_C#\Csharp_Projects\Test1\Test1\bin\Debug\net8.0-windows\My_Tetris_Game_2024.deps.json
+E:\Programming\12_C#\Csharp_Projects\Test1\Test1\bin\Debug\net8.0-windows\My_Tetris_Game_2024.runtimeconfig.json
+E:\Programming\12_C#\Csharp_Projects\Test1\Test1\bin\Debug\net8.0-windows\My_Tetris_Game_2024.dll
+E:\Programming\12_C#\Csharp_Projects\Test1\Test1\bin\Debug\net8.0-windows\My_Tetris_Game_2024.pdb
+E:\Programming\12_C#\Csharp_Projects\Test1\Test1\obj\Debug\net8.0-windows\MainWindow.g.cs
+E:\Programming\12_C#\Csharp_Projects\Test1\Test1\obj\Debug\net8.0-windows\App.g.cs
+E:\Programming\12_C#\Csharp_Projects\Test1\Test1\obj\Debug\net8.0-windows\My_Tetris_Game_2024_MarkupCompile.cache
+E:\Programming\12_C#\Csharp_Projects\Test1\Test1\obj\Debug\net8.0-windows\My_Tetris_Game_2024_MarkupCompile.lref
+E:\Programming\12_C#\Csharp_Projects\Test1\Test1\obj\Debug\net8.0-windows\MainWindow.baml
+E:\Programming\12_C#\Csharp_Projects\Test1\Test1\obj\Debug\net8.0-windows\My_Tetris_Game_2024.g.resources
+E:\Programming\12_C#\Csharp_Projects\Test1\Test1\obj\Debug\net8.0-windows\My_Tetris_Game_2024.GeneratedMSBuildEditorConfig.editorconfig
+E:\Programming\12_C#\Csharp_Projects\Test1\Test1\obj\Debug\net8.0-windows\My_Tetris_Game_2024.AssemblyInfoInputs.cache
+E:\Programming\12_C#\Csharp_Projects\Test1\Test1\obj\Debug\net8.0-windows\My_Tetris_Game_2024.AssemblyInfo.cs
+E:\Programming\12_C#\Csharp_Projects\Test1\Test1\obj\Debug\net8.0-windows\My_Tetris_Game_2024.csproj.CoreCompileInputs.cache
+E:\Programming\12_C#\Csharp_Projects\Test1\Test1\obj\Debug\net8.0-windows\My_Tetris_Game_2024.sourcelink.json
+E:\Programming\12_C#\Csharp_Projects\Test1\Test1\obj\Debug\net8.0-windows\My_Tetris_Game_2024.dll
+E:\Programming\12_C#\Csharp_Projects\Test1\Test1\obj\Debug\net8.0-windows\refint\My_Tetris_Game_2024.dll
+E:\Programming\12_C#\Csharp_Projects\Test1\Test1\obj\Debug\net8.0-windows\My_Tetris_Game_2024.pdb
+E:\Programming\12_C#\Csharp_Projects\Test1\Test1\obj\Debug\net8.0-windows\My_Tetris_Game_2024.genruntimeconfig.cache
+E:\Programming\12_C#\Csharp_Projects\Test1\Test1\obj\Debug\net8.0-windows\ref\My_Tetris_Game_2024.dll
+E:\Programming\12_C#\Csharp_Projects\My Tetris Game 2024\Test1\Test1\bin\Debug\net8.0-windows\My_Tetris_Game_2024.exe
+E:\Programming\12_C#\Csharp_Projects\My Tetris Game 2024\Test1\Test1\bin\Debug\net8.0-windows\My_Tetris_Game_2024.deps.json
+E:\Programming\12_C#\Csharp_Projects\My Tetris Game 2024\Test1\Test1\bin\Debug\net8.0-windows\My_Tetris_Game_2024.runtimeconfig.json
+E:\Programming\12_C#\Csharp_Projects\My Tetris Game 2024\Test1\Test1\bin\Debug\net8.0-windows\My_Tetris_Game_2024.dll
+E:\Programming\12_C#\Csharp_Projects\My Tetris Game 2024\Test1\Test1\bin\Debug\net8.0-windows\My_Tetris_Game_2024.pdb
+E:\Programming\12_C#\Csharp_Projects\My Tetris Game 2024\Test1\Test1\obj\Debug\net8.0-windows\App.g.cs
+E:\Programming\12_C#\Csharp_Projects\My Tetris Game 2024\Test1\Test1\obj\Debug\net8.0-windows\My_Tetris_Game_2024_MarkupCompile.cache
+E:\Programming\12_C#\Csharp_Projects\My Tetris Game 2024\Test1\Test1\obj\Debug\net8.0-windows\My_Tetris_Game_2024_MarkupCompile.lref
+E:\Programming\12_C#\Csharp_Projects\My Tetris Game 2024\Test1\Test1\obj\Debug\net8.0-windows\My_Tetris_Game_2024.g.resources
+E:\Programming\12_C#\Csharp_Projects\My Tetris Game 2024\Test1\Test1\obj\Debug\net8.0-windows\My_Tetris_Game_2024.GeneratedMSBuildEditorConfig.editorconfig
+E:\Programming\12_C#\Csharp_Projects\My Tetris Game 2024\Test1\Test1\obj\Debug\net8.0-windows\My_Tetris_Game_2024.AssemblyInfoInputs.cache
+E:\Programming\12_C#\Csharp_Projects\My Tetris Game 2024\Test1\Test1\obj\Debug\net8.0-windows\My_Tetris_Game_2024.AssemblyInfo.cs
+E:\Programming\12_C#\Csharp_Projects\My Tetris Game 2024\Test1\Test1\obj\Debug\net8.0-windows\My_Tetris_Game_2024.csproj.CoreCompileInputs.cache
+E:\Programming\12_C#\Csharp_Projects\My Tetris Game 2024\Test1\Test1\obj\Debug\net8.0-windows\My_Tetris_Game_2024.sourcelink.json
+E:\Programming\12_C#\Csharp_Projects\My Tetris Game 2024\Test1\Test1\obj\Debug\net8.0-windows\My_Tetris_Game_2024.dll
+E:\Programming\12_C#\Csharp_Projects\My Tetris Game 2024\Test1\Test1\obj\Debug\net8.0-windows\refint\My_Tetris_Game_2024.dll
+E:\Programming\12_C#\Csharp_Projects\My Tetris Game 2024\Test1\Test1\obj\Debug\net8.0-windows\My_Tetris_Game_2024.pdb
+E:\Programming\12_C#\Csharp_Projects\My Tetris Game 2024\Test1\Test1\obj\Debug\net8.0-windows\My_Tetris_Game_2024.genruntimeconfig.cache
+E:\Programming\12_C#\Csharp_Projects\My Tetris Game 2024\Test1\Test1\obj\Debug\net8.0-windows\ref\My_Tetris_Game_2024.dll
+E:\Programming\12_C#\Csharp_Projects\My Tetris Game 2024\Test1\Test1\obj\Debug\net8.0-windows\A_0_Main\MainWindow.g.cs
+E:\Programming\12_C#\Csharp_Projects\My Tetris Game 2024\Test1\Test1\obj\Debug\net8.0-windows\A_0_Main\MainWindow.baml
+E:\Programming\12_C#\Csharp_Projects\My Tetris Game 2024\Test1\Test1\obj\Debug\net8.0-windows\My_Tetris_Game_2024.csproj.GenerateResource.cache
+E:\Programming\12_C#\Csharp_Projects\My Tetris Game 2024\Test1\Test1\obj\Debug\net8.0-windows\My_Tetris_Game_2024.Resource1.resources

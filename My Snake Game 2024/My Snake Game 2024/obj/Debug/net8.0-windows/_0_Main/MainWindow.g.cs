@@ -53,7 +53,7 @@ namespace My_Snake_Game_2024 {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/My_Snake_Game_2024;component/_0_main/mainwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/My Snake Game 2024;component/_0_main/mainwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\_0_Main\MainWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
