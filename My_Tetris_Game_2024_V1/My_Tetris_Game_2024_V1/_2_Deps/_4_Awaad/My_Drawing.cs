@@ -1,6 +1,7 @@
 ﻿using My_Tetris_Game_2024_V1.__Globals;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -55,8 +56,11 @@ namespace My_Tetris_Game_2024_V1._2_Deps._4_Awaad
             for(int i=0;i<Globals.base_Rectangles.Count;i++)
             {
                 Rectangle rect = Globals.base_Rectangles[i].rect;
+
                 int Row = Globals.base_Rectangles[i].row;
                 int Col = Globals.base_Rectangles[i].col;
+                Debug.WriteLine("the row for reached collised = " + Row);
+                Debug.WriteLine("The Col for Reached collised = " + Col);
                 gameArea.Children.Add(rect);
                 Grid.SetColumn(rect, Col);
                 Grid.SetRow(rect, Row);

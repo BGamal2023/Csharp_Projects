@@ -97,20 +97,6 @@ namespace My_Tetris_Game_2024_V1._2_Deps._4_Awaad
 
         }
         //----------------------------------------------------------------------------------------
-        public void update_List_of_Cols_and_Thier_Collision_rows(List<My_Rect_For_Shapes> currFrame)
-        {
-            if (Globals.D_Collision == true)
-            {
-
-                foreach (My_Rect_For_Shapes i_My_Rect in currFrame)
-                {
-                    if (list_of_All_Cols_And_Thier_Collision_Row[i_My_Rect.col].collision_Row > i_My_Rect.row)
-                    {
-                        list_of_All_Cols_And_Thier_Collision_Row[i_My_Rect.col].collision_Row = i_My_Rect.row;
-                    }
-                }
-            }
-        }
 
     }
 }
