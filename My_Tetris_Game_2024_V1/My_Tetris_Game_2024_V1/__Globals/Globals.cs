@@ -1,4 +1,5 @@
 ﻿using My_Tetris_Game_2024_V1._2_Deps._2_Canvas_Area_Handler;
+using My_Tetris_Game_2024_V1._2_Deps._4_Awaad;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,6 +52,7 @@ namespace My_Tetris_Game_2024_V1.__Globals
         public static bool L_Collision = false; 
         public static bool D_Collision=false;
         //-----------------------------------------
-        public static List<Rectangle> base_Rectangles= new List<Rectangle>();
+        public static List<Rectangle> curr_frame_Rectangles=new List<Rectangle>();
+        public static List<Container_For_Down_Collisied_Frames> base_Rectangles= new List<Container_For_Down_Collisied_Frames>();
     }
 }

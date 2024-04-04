@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
@@ -18,13 +19,11 @@ namespace My_Tetris_Game_2024_V1._2_Deps._4_Awaad
         {
             //! bug# 10 remove the clear
               gameArea.Children.Clear();
+            draw_The_Reached_Collisied_Frames_Permanintly(gameArea);
             foreach (My_Rect_For_Shapes i_My_Rect in the_Choosen_Shape)
             {
-                 Rectangle i_Rect = new Rectangle()
-                {
-                    Width = Globals.block_piece_Width,
-                    Height = Globals.block_piece_Hight,
-                };
+                Rectangle i_Rect = new Rectangle();
+                
                 if (i_My_Rect.filled == true)
                 {
                     i_Rect = new Rectangle()
@@ -34,6 +33,7 @@ namespace My_Tetris_Game_2024_V1._2_Deps._4_Awaad
                         Fill = new SolidColorBrush(Colors.Red),
 
                     };
+                    Globals.curr_frame_Rectangles.Add(i_Rect);
                 }
 
                 try
@@ -49,59 +49,17 @@ namespace My_Tetris_Game_2024_V1._2_Deps._4_Awaad
                 }
             }
         }
-        //---------------
-        public void draw_The_Collisied_Frame_Permentally(List<My_Rect_For_Shapes> the_Choosen_Shape, Grid gameArea)
+        //-----------------------
+        public void draw_The_Reached_Collisied_Frames_Permanintly(Grid gameArea)
         {
-            for (int i = 0; i < the_Choosen_Shape.Count; i++)
+            for(int i=0;i<Globals.base_Rectangles.Count;i++)
             {
-
-                try
-                {
-                    My_Rect_For_Shapes i_Rect = the_Choosen_Shape[i];
-                    collisied_frame[i].filled = i_Rect.filled;
-                    collisied_frame[i].shapeType = i_Rect.shapeType;
-                    collisied_frame[i].shapeRotation = i_Rect.shapeRotation;
-
-
-                }
-                catch (Exception e)
-                {
-
-                }
-
-            }
-
-            //------------------------
-
-            foreach (My_Rect_For_Shapes i_My_Rect in collisied_frame)
-            {
-                Rectangle i_Rect = new Rectangle()
-                {
-                    Width = Globals.block_piece_Width,
-                    Height = Globals.block_piece_Hight,
-                };
-                if (i_My_Rect.filled == true)
-                {
-                    i_Rect = new Rectangle()
-                    {
-                        Width = Globals.block_piece_Width,
-                        Height = Globals.block_piece_Hight,
-                        Fill = new SolidColorBrush(Colors.Red),
-
-                    };
-                }
-
-                try
-                {
-                    gameArea.Children.Add(i_Rect);
-
-                    Grid.SetColumn(i_Rect, i_My_Rect.col);
-                    Grid.SetRow(i_Rect, i_My_Rect.row);
-                }
-                catch (Exception ex)
-                {
-
-                }
+                Rectangle rect = Globals.base_Rectangles[i].rect;
+                int Row = Globals.base_Rectangles[i].row;
+                int Col = Globals.base_Rectangles[i].col;
+                gameArea.Children.Add(rect);
+                Grid.SetColumn(rect, Col);
+                Grid.SetRow(rect, Row);
             }
         }
     }

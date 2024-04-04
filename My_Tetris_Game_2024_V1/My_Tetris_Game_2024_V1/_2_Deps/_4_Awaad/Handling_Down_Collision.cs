@@ -48,26 +48,52 @@ namespace My_Tetris_Game_2024_V1._2_Deps._4_Awaad
         
 
         //------------------------------------------------------------------------------------
-        public void handle_Down_Collision(List<My_Rect_For_Shapes> currFrame,List<Base_Class> list_of_All_Cols_And_Thier_Collision_Row)
+        public void handle_Down_Collision(List<My_Rect_For_Shapes> currFrame)
         {
-            int collision_Row = 0; 
-            foreach (My_Rect_For_Shapes i_My_Rect  in currFrame) {
-                
-
-                collision_Row = list_of_All_Cols_And_Thier_Collision_Row[i_My_Rect.col].collision_Row;
-                if(i_My_Rect.row==collision_Row-1)
-                {
-                    Globals.D_Collision=true;
-
-                }
-               
-
+           
             
+                foreach (My_Rect_For_Shapes i_My_Rect in currFrame)
+                {
+
+                if (Globals.base_Rectangles.Count == 0)
+                {
+                    //----
+                    if (i_My_Rect.filled)
+                    {
+
+                        if (i_My_Rect.row == Globals.No_Of_gameArea_Rows - 2)
+                        {
+                            Globals.D_Collision = true;
+                        }
+                    }
+
+                    //---
+                }
+                else
+                {
+                    if (i_My_Rect.filled)
+                    {
+                        for (int i = 0; i < Globals.base_Rectangles.Count; i++)
+                        {
+
+                            if (i_My_Rect.col == Globals.base_Rectangles[i].col && i_My_Rect.row + 1 == Globals.base_Rectangles[i].row)
+                            {
+                                Globals.D_Collision = true;
+                            }
+                            else
+                            {
+                                if (i_My_Rect.row == Globals.No_Of_gameArea_Rows - 2)
+                                {
+                                    Globals.D_Collision = true;
+                                }
+                            }
+                        }
+
+                    }
+                }
+
             }
 
-            //--------
-
-            update_List_of_Cols_and_Thier_Collision_rows(currFrame);
 
         }
         //----------------------------------------------------------------------------------------

@@ -115,8 +115,8 @@ namespace My_Tetris_Game_2024_V1
                 Current_Item.fill_Next_Shape();
             }
 
-            obj_Handling_Down_Collision.handle_Down_Collision(Current_Item.currFrame,
-                Handling_Down_Collision.list_of_All_Cols_And_Thier_Collision_Row);
+            obj_Handling_Down_Collision.handle_Down_Collision(Current_Item.currFrame);
+               
             if (Globals.D_Collision == false)
             {
                 Handling_Going_Down.handle_Going_Down(Current_Item.currFrame, Current_Item.currFrame, gameArea);
@@ -127,18 +127,40 @@ namespace My_Tetris_Game_2024_V1
             }
             else
             {
-                counter_Of_Timer = 0;
                 Globals.D_Collision = false;
-                /// below i am trying to catch the 4 or 3 rectangles to be staied below while new 3 get from up
-                obj_My_Drawing.draw_The_Collisied_Frame_Permentally(Current_Item.currFrame, gameArea);
+                counter_Of_Timer = 0;
+                //---------------------------
+                foreach (My_Rect_For_Shapes i_My_Rect in Current_Item.currFrame)
+                {
+                    Rectangle i_Rect = new Rectangle();
+
+                    if (i_My_Rect.filled == true)
+                    {
+                        i_Rect = new Rectangle()
+                        {
+                            Width = Globals.block_piece_Width,
+                            Height = Globals.block_piece_Hight,
+                            Fill = new SolidColorBrush(Colors.Red),
+
+                        };
+                        Container_For_Down_Collisied_Frames base_rect
+                            = new Container_For_Down_Collisied_Frames(i_Rect, i_My_Rect.row, i_My_Rect.col);
+                        Globals.base_Rectangles.Add(base_rect);
+                    }
 
 
+                    //--------------------------
+                  
+                    /// below i am trying to catch the 4 or 3 rectangles to be staied below while new 3 get from up
+
+
+
+
+                }
+                //---------------------------
 
 
             }
-
-
-
         }
 
         private void handle_Key_Down_Strokes(object sender, KeyEventArgs e)
@@ -164,6 +186,8 @@ namespace My_Tetris_Game_2024_V1
             else if (e.Key== Key.Down)
             {
                 obj_Handling_Down_Stroke.handle_Down_Strokes(Current_Item.currFrame);
+                obj_My_Drawing.draw(Current_Item.currFrame, gameArea);
+
             }
         }
 
@@ -185,6 +209,10 @@ namespace My_Tetris_Game_2024_V1
             else if (e.Key == Key.Left)
             {
                 Globals.isLEFT = false;
+            }
+            else if(e.Key == Key.Down)
+            {
+                
             }
         }
         //-------------------------------------------------------------------------------------------\
