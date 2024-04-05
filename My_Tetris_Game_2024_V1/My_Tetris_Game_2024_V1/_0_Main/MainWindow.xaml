@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:My_Tetris_Game_2024_V1"
         mc:Ignorable="d"
          Title="MainWindow" Height="700" Width="500"
-    KeyDown="handle_Key_Down_Strokes" KeyUp="handle_The_Key_Up_Strokes">
+    KeyDown="handle_Key_Pressed" KeyUp="handle_The_Key_Released">
     <Grid>
         <!---->
         <Grid.ColumnDefinitions>

@@ -97,17 +97,68 @@ namespace My_Tetris_Game_2024_V1
 
         private void timerTick(object? sender, EventArgs e)
         {
-            /*
-            Grid.SetColumn(rectangle1, Globals.rect_1_Col);
-            Grid.SetColumn(rectangle2, Globals.rect_2_Col);
-            Grid.SetColumn(rectangle3, Globals.rect_3_Col);
-            Grid.SetColumn(rectangle4, Globals.rect_4_Col);
 
-            Grid.SetRow(rectangle1, Globals.rect_1_Row);
-            Grid.SetRow(rectangle2, Globals.rect_2_Row);
-            Grid.SetRow(rectangle3, Globals.rect_3_Row);
-            Grid.SetRow(rectangle4, Globals.rect_4_Row);*/
+            handl_Timer_Tick();
 
+        }
+
+        private void handle_Key_Pressed(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Right)
+            {
+                Globals.isRIGHT = true;
+
+                obj_Handling_Right_And_Left.handle_Righ_Strokes(Current_Item.currFrame);
+                obj_My_Drawing.draw(Current_Item.currFrame, gameArea);
+
+
+
+            }
+            else if (e.Key == Key.Left)
+            {
+                Globals.isLEFT = true;
+                obj_Handling_Right_And_Left.handle_Left_Strokes(Current_Item.currFrame);
+                obj_My_Drawing.draw(Current_Item.currFrame, gameArea);
+
+
+            }
+            else if (e.Key== Key.Down)
+            {
+                handl_Timer_Tick();
+                obj_Handling_Down_Stroke.handle_Down_Strokes(Current_Item.currFrame);
+                obj_My_Drawing.draw(Current_Item.currFrame, gameArea);
+
+            }
+        }
+
+        private void handle_The_Key_Released(object sender, KeyEventArgs e)
+        {
+           
+
+            
+            if (e.Key == Key.Up)
+            {
+                Current_Item.rotate();
+                obj_My_Drawing.draw(Current_Item.currFrame, gameArea);
+
+            }
+            else if (e.Key == Key.Right)
+            {
+                Globals.isRIGHT = false;
+            }
+            else if (e.Key == Key.Left)
+            {
+                Globals.isLEFT = false;
+            }
+            else if(e.Key == Key.Down)
+            {
+                
+            }
+        }
+        //-------------------------------------------------------------------------------------------\
+
+        private void handl_Timer_Tick()
+        {
 
             if (counter_Of_Timer == 0)
             {
@@ -116,10 +167,11 @@ namespace My_Tetris_Game_2024_V1
             }
 
             obj_Handling_Down_Collision.handle_Down_Collision(Current_Item.currFrame);
-               
+
             if (Globals.D_Collision == false)
             {
-                Handling_Going_Down.handle_Going_Down(Current_Item.currFrame, Current_Item.currFrame, gameArea);
+                obj_Handling_Down_Stroke.handle_Down_Strokes(Current_Item.currFrame);
+
                 // obj_Handling_Right_And_Left.handle_Righ_And_Left_Strokes(Current_Item.currFrame);
                 obj_My_Drawing.draw(Current_Item.currFrame, gameArea);
                 counter_Of_Timer++;
@@ -150,7 +202,7 @@ namespace My_Tetris_Game_2024_V1
 
 
                     //--------------------------
-                  
+
                     /// below i am trying to catch the 4 or 3 rectangles to be staied below while new 3 get from up
 
 
@@ -162,60 +214,7 @@ namespace My_Tetris_Game_2024_V1
 
             }
         }
-
-        private void handle_Key_Down_Strokes(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Right)
-            {
-                Globals.isRIGHT = true;
-
-                obj_Handling_Right_And_Left.handle_Righ_Strokes(Current_Item.currFrame);
-                obj_My_Drawing.draw(Current_Item.currFrame, gameArea);
-
-
-
-            }
-            else if (e.Key == Key.Left)
-            {
-                Globals.isLEFT = true;
-                obj_Handling_Right_And_Left.handle_Left_Strokes(Current_Item.currFrame);
-                obj_My_Drawing.draw(Current_Item.currFrame, gameArea);
-
-
-            }
-            else if (e.Key== Key.Down)
-            {
-                obj_Handling_Down_Stroke.handle_Down_Strokes(Current_Item.currFrame);
-                obj_My_Drawing.draw(Current_Item.currFrame, gameArea);
-
-            }
-        }
-
-        private void handle_The_Key_Up_Strokes(object sender, KeyEventArgs e)
-        {
-           
-
-            
-            if (e.Key == Key.Up)
-            {
-                Current_Item.rotate();
-                obj_My_Drawing.draw(Current_Item.currFrame, gameArea);
-
-            }
-            else if (e.Key == Key.Right)
-            {
-                Globals.isRIGHT = false;
-            }
-            else if (e.Key == Key.Left)
-            {
-                Globals.isLEFT = false;
-            }
-            else if(e.Key == Key.Down)
-            {
-                
-            }
-        }
-        //-------------------------------------------------------------------------------------------\
+        //---------------------------------------------------------------------------------------------
 
     /* void draw(List<My_Rect_For_Shapes> the_Choosen_Shape)
         {
