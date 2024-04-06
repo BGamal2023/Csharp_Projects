@@ -7,48 +7,43 @@
         mc:Ignorable="d"
          Title="MainWindow" Height="700" Width="500"
     KeyDown="handle_Key_Pressed" KeyUp="handle_The_Key_Released">
+  
+    <!--
     <Grid>
-        <!---->
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="340"/>
-            <ColumnDefinition Width="150"/>
-        </Grid.ColumnDefinitions>
-        <!---->
-        <Grid.RowDefinitions>
-            <RowDefinition Height="680"/>
-        </Grid.RowDefinitions>
-        <!---->
-        <Viewbox
+     
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="340"/>
+        <ColumnDefinition Width="150"/>
+    </Grid.ColumnDefinitions>
+   
+    <Grid.RowDefinitions>
+        <RowDefinition Height="680"/>
+    </Grid.RowDefinitions>
+  
+    <Viewbox
   Grid.Row="1"
   Grid.Column="0"
   Margin="0,0,0,0">
-            <Grid x:Name="gameArea"
+        <Grid x:Name="gameArea"
   Background="#101010"
    Width="340"
-   Height="680"
-              ShowGridLines="True"
+   Height="700"
+     ShowGridLines="True"
   >
-            </Grid>
-        </Viewbox>
-
-
-        <!---->
-
-        <StackPanel Grid.Row="1"
+        </Grid>
+    </Viewbox>
+    <StackPanel Grid.Row="1"
          Grid.Column="2"
          VerticalAlignment="Center"
          HorizontalAlignment="left"
          >
-            <TextBlock Text="Next" 
+        <TextBlock Text="Next" 
             TextAlignment="Center"/>
-            <Image x:Name="nextImage"
+        <Image x:Name="nextImage"
                    Margin="20"
                    Width="100" />
-
-
-        </StackPanel>
-
-        <!---->
+    </StackPanel>
 
     </Grid>
+   -->
 </Window>

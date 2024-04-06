@@ -1,5 +1,4 @@
-﻿using My_Tetris_Game_2024_V1._2_Deps._2_Canvas_Area_Handler;
-using My_Tetris_Game_2024_V1._2_Deps._4_Awaad;
+﻿using My_Tetris_Game_2024_V1._2_Deps._4_Awaad;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,20 +13,19 @@ namespace My_Tetris_Game_2024_V1.__Globals
     {
         //-----------------MainWindow-------------
         public static int mainWindow_Width = 500;
-        public static int mainWindow_Height = 700;
+        public static int mainWindow_Height = 900;
         //-----------------gameArea----------------
         public static string gameArea_Name = "gameArea";
+        public static int gameArea_Width = 400;
+        public static int gameArea_Height = 800;
         public static Brush gameArea_Background = Brushes.Black;
-        public static int gameArea_Height = 700;
-        public static int gameArea_Width = 350;
-        public static int No_Of_gameArea_Cols = 17;
-        public static int No_Of_gameArea_Rows = 34;
+        public static int No_Of_gameArea_Cols = 16;
+        public static int No_Of_gameArea_Rows = 32;
         public static int timerTick = 1000;
         //-----------------Blocks-------------------
-        public static int block_piece_Hight = 20;
-        public static int block_piece_Width = 20;
+        public static int block_piece_Hight = 25;
+        public static int block_piece_Width = 25;
         //----------------Canvas Block--------------
-        public static Dictionary<int ,Canvas_Block> dic_Canvas_Blocks= new Dictionary<int ,Canvas_Block>();
         //----------------keys strokes handling----
         public static bool isUP = false;
         public static bool isDOWN = false;

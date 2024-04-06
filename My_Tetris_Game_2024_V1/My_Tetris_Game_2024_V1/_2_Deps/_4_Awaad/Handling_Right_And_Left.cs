@@ -29,10 +29,14 @@ namespace My_Tetris_Game_2024_V1._2_Deps._4_Awaad
         {
             foreach (My_Rect_For_Shapes i_My_Rect in currFrame)
             {
-                if (i_My_Rect.col >= 16)
+                if (i_My_Rect.filled)
                 {
-                    Globals.R_Collision = true;
+                    if (i_My_Rect.col >= Globals.No_Of_gameArea_Cols-1)
+                    {
+                        Globals.R_Collision = true;
+                    }
                 }
+              
 
             }
 
@@ -58,10 +62,14 @@ namespace My_Tetris_Game_2024_V1._2_Deps._4_Awaad
         {
             foreach (My_Rect_For_Shapes i_My_Rect in currFrame)
             {
-                if (i_My_Rect.col<= 0)
+                if (i_My_Rect.filled)
                 {
-                    Globals.L_Collision = true;
+                    if (i_My_Rect.col <= 0)
+                    {
+                        Globals.L_Collision = true;
+                    }
                 }
+               
 
             }
 

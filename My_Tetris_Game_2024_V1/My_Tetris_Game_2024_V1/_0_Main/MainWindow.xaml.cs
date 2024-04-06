@@ -33,15 +33,17 @@ namespace My_Tetris_Game_2024_V1
         private Handling_Right_And_Left obj_Handling_Right_And_Left=new Handling_Right_And_Left();
         private My_Drawing obj_My_Drawing=new My_Drawing();
         private Handling_Down_Stroke obj_Handling_Down_Stroke=new Handling_Down_Stroke();
-        private Handling_Down_Collision obj_Handling_Down_Collision=new Handling_Down_Collision();  
+        private Handling_Down_Collision obj_Handling_Down_Collision=new Handling_Down_Collision();
+        private Grid gameArea;
         //--------------------------------------------------------------------------------------
         public MainWindow()
         {
             InitializeComponent();
             //--
-            obj_General_Manager.initialize_Window(this, gameArea);
+           gameArea= obj_General_Manager.initialize_Window(this);
             //--
-            obj_General_Manager.initialize_The_Game(gameTimer, gameArea);
+           
+          //  obj_General_Manager.initialize_The_Game(gameTimer, gameArea);
             //--
 
           /*  rectangle1 = new Rectangle()

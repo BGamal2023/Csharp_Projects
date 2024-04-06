@@ -25,11 +25,6 @@ namespace My_Tetris_Game_2024_V1._2_Deps._4_Awaad
             }
             Debug.WriteLine("nextRotationn= " + nextRotation);
 
-
-
-
-           
-
             switch (curr_Shape_Type)
             {
                 case Globals.E_shapeType.I:

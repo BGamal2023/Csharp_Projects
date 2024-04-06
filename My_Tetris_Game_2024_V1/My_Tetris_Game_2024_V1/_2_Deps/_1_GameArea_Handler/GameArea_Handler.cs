@@ -13,18 +13,22 @@ namespace My_Tetris_Game_2024_V1._2_Deps._1_GameArea_Handler
 {
     internal class GameArea_Handler
     {
+        public Grid gameArea = new Grid();
         //---------------------------------------------------------------------
-        public void handle_GameArea(Grid gameArea)
+        public Grid creat_And_Handle_The_GameArea()
         {
+            set_Diemension_For_The_GameArea();
             //--
-            add_Required_Cols(gameArea);
+            add_Required_Cols();
             //--
-            add_Required_Rows(gameArea);    
+            add_Required_Rows();    
             //--
-
+            gameArea.ShowGridLines = true;
+            gameArea.Background = Globals.gameArea_Background;
+            return gameArea;
         }
         //---------------------------------------------------------------------
-        private void add_Required_Cols(Grid gameArea)
+        private void add_Required_Cols()
         {
             for (int i = 0; i < Globals.No_Of_gameArea_Cols; i++)
             {
@@ -36,7 +40,7 @@ namespace My_Tetris_Game_2024_V1._2_Deps._1_GameArea_Handler
             }
         }
         //---------------------------------------------------------------------
-        private void add_Required_Rows(Grid gameArea)
+        private void add_Required_Rows()
         {
             for (int i = 0; i < Globals.No_Of_gameArea_Rows; i++)
             {
@@ -47,8 +51,13 @@ namespace My_Tetris_Game_2024_V1._2_Deps._1_GameArea_Handler
                 //--
             }
         }
-       
-   
+        //---------------------------------------------------------------------
+        private void set_Diemension_For_The_GameArea()
+        {
+            gameArea.Width = Globals.gameArea_Width;
+            gameArea.Height=Globals.gameArea_Height;
+        }
+
     }
 }
 

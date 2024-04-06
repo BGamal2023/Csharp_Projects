@@ -1,6 +1,5 @@
 ﻿using My_Tetris_Game_2024_V1._2_Deps._0_MainWindow_Handler;
 using My_Tetris_Game_2024_V1._2_Deps._1_GameArea_Handler;
-using My_Tetris_Game_2024_V1._2_Deps._2_Canvas_Area_Handler;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +13,6 @@ namespace My_Tetris_Game_2024_V1._1_General_Manager
     class General_Manager
     {
         //------------------------------------------------------------------------------
-        private Canvas_Block obj_Canvas_Block = new Canvas_Block();
         private MainWindow_Handler obj_MainWindow_Handler=new MainWindow_Handler();
         private GameArea_Handler obj_GameArea_Handler=new GameArea_Handler();
 
@@ -22,19 +20,17 @@ namespace My_Tetris_Game_2024_V1._1_General_Manager
         //------------------------------------------------------------------------------
         public void main_Method() 
         { 
-            obj_Canvas_Block.creat_The_Canvas_Area();
 
           
         }
-        //------------------------------------------------------------------------------
         //--------------------------------------------------------------------
-        public void initialize_Window(MainWindow mWindow, Grid gameArea)
+        public Grid initialize_Window(MainWindow mWindow)
         {
+            Grid gameArea=obj_GameArea_Handler.creat_And_Handle_The_GameArea();
             //--
-            obj_MainWindow_Handler.handle_mainWindow(mWindow);
+            obj_MainWindow_Handler.handle_mainWindow(mWindow, gameArea);
             //--
-            obj_GameArea_Handler.handle_GameArea(gameArea);
-            //--
+            return gameArea;
         }
         //--------------------------------------------------------------------
         public void initialize_The_Game(DispatcherTimer gameTimer, Grid gameArea)
@@ -53,5 +49,9 @@ namespace My_Tetris_Game_2024_V1._1_General_Manager
             //-
         }
         //--------------------------------------------------------------------
+     /*   public Grid get_The_Game_Area()
+        {
+            return obj_GameArea_Handler.creat_And_Handle_The_GameArea();
+        }*/
     }
 }

@@ -51,7 +51,16 @@ namespace My_Tetris_Game_2024_V1._2_Deps._4_Awaad
         public void handle_Down_Collision(List<My_Rect_For_Shapes> currFrame)
         {
            
-            
+            //--------------
+
+            if(Globals.base_Rectangles.Count== 0)
+            {
+               
+            }
+            else
+            {
+
+            }
                 foreach (My_Rect_For_Shapes i_My_Rect in currFrame)
                 {
 
@@ -61,7 +70,7 @@ namespace My_Tetris_Game_2024_V1._2_Deps._4_Awaad
                     if (i_My_Rect.filled)
                     {
 
-                        if (i_My_Rect.row == Globals.No_Of_gameArea_Rows - 2)
+                        if (i_My_Rect.row == Globals.No_Of_gameArea_Rows -1)
                         {
                             Globals.D_Collision = true;
                         }
@@ -82,7 +91,7 @@ namespace My_Tetris_Game_2024_V1._2_Deps._4_Awaad
                             }
                             else
                             {
-                                if (i_My_Rect.row == Globals.No_Of_gameArea_Rows - 2)
+                                if (i_My_Rect.row == Globals.No_Of_gameArea_Rows-1)
                                 {
                                     Globals.D_Collision = true;
                                 }
